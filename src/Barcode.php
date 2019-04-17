@@ -87,6 +87,11 @@ class Barcode
 			case 'CODABAR': // CODABAR
 				return new Barcode\Codabar($code, ($pr > 0) ? $pr : 2.5);
 
+            case 'C128': // CODE 128 AUTO
+
+            case 'C128AUTO': // CODE 128 AUTO. This concat A and C. The create short barcode 128.
+                return new Barcode\Code128Auto($code, 'AUTO');
+
 			case 'C128A': // CODE 128 A
 				return new Barcode\Code128($code, 'A');
 
